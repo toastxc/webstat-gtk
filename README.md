@@ -7,6 +7,7 @@
 git clone https://github.com/toastxc/webstat-gtk.git
 cd webstat-gtk
 cargo build --release
+# create payload.sh
 cargo run
 ```
 # Usage
