@@ -10,7 +10,8 @@ cargo build --release
 cargo run
 ```
 # Usage
-click button :3
+Create a shell file with the name `payload.sh`, in the same directory as the envionment
+
 
 
 ![LGPLv3 Badge](/README_RESOURCES/LGPLv3%20Logo.svg)
