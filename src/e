@@ -1,0 +1,57 @@
+use gtk;
+use gtk::prelude::*;
+use gtk::{Application, ApplicationWindow};
+
+
+use gtk::Button;
+
+
+fn main() {
+
+
+    let app = Application::builder()
+        .application_id("xyz.toastxc.doe")
+        .build();
+
+
+    app.connect_activate(gui);
+
+    app.run();
+}
+
+
+fn gui(application: &Application) {
+
+    let i_button = Button::builder()
+        .label("internet status")
+        .margin_top(12)
+        .margin_bottom(12)
+        .margin_start(12)
+        .margin_end(12)
+        .build();
+
+      let p_button = Button::builder()
+        .label("placeholder")
+        .margin_top(12)
+        .margin_bottom(12)
+        .margin_start(12)
+        .margin_end(12)
+        .build();
+
+
+
+     let gtk_box = gtk::Box::builder()
+         .build();
+         gtk_box.append(&i_button);
+         gtk_box.append(&p_button);
+
+
+     let window = ApplicationWindow::builder()
+        .application(application)
+        .title("DoE Connect")
+        .child(&gtk_box)
+        .build();
+
+       window.present();
+
+}
