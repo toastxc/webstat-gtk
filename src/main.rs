@@ -16,7 +16,7 @@ fn main() {
 
 
     let app = Application::builder()
-        .application_id("xyz.toastxc.status")
+        .application_id("xyz.toastxc.jan-gae")
         .build();
 
 
@@ -37,7 +37,7 @@ fn gui(application: &Application) {
 
 
     let internet_button = b_template.clone()
-        .label("status of toastxc.xyz")
+        .label("status of jan's torrents")
         .build();
 
 
@@ -45,9 +45,8 @@ fn gui(application: &Application) {
     //let label = Label::new(Some("t"));
 
     internet_button.connect_clicked(move |internet_button| {
-        let cmd_res = Command::new("curl")
-            .arg("-I")
-            .arg("https://toastxc.xyz")
+        let cmd_res = Command::new("sh")
+            .arg("payload.sh")
             .output();
 
 
@@ -75,7 +74,7 @@ fn gui(application: &Application) {
 
      let window = ApplicationWindow::builder()
         .application(application)
-        .title("Toast Up")
+        .title("Torrent Stat")
         .child(&gtk_box)
         .build();
 
